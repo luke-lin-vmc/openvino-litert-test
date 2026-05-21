@@ -1,6 +1,8 @@
 # About this repo
 This repo is used to document our testing steps for LiteRT (formerly TensorFlow Lite) and LiteRT-LM with the OpenVINO backend.
 
+![chat_on_npu](./log/chat_on_npu.mp4)
+
 # Quick Steps
 ## Installation
 Install and upgrade `litert-lm` to the latest version.
