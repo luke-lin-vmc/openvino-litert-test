@@ -14,7 +14,7 @@ pip install --upgrade openvino
 Log file [installation.log](./log/installation.log) is provided for reference.
 
 ## Chat
-Download Gemma 4 from [HuggingFace](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/tree/main) and run the model
+Run below commands to download Gemma4 and run the model
 ### Run on CPU
 ```
 litert-lm run ^
@@ -46,7 +46,7 @@ litert-lm run ^
 ```
 * Please note the model name becomes `gemma-4-E2B-it_intel_PTL.litertlm`
 ### Note
-* There is no need to worry about models being re-downloaded, as they will be cached under `%USERPROFILE%\.cache\huggingface\hub\` once being downloaded
+* There is no need to worry about models being re-downloaded, as they will be cached under `%USERPROFILE%\.cache\huggingface\hub\` after they are downloaded once
 * Or you may manually download models from [HuggingFace](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/tree/main)
 ### Sample log
 ```
