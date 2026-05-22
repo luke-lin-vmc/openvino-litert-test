@@ -1,38 +1,29 @@
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=gpu --prompt="transcribe the audio then translate it to Chinese" --attachment "how_are_you_doing_today.wav" --audio-backend=cpu
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=gpu ^
+More? --enable-speculative-decoding=true ^
+More? --prompt="transcribe the audio then translate it to Chinese" ^
+More? --attachment "./sample/how_are_you_doing_today.wav" ^
+More? --audio-backend=cpu
 Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
 How are you doing today?
 今天你怎么样？
 
 
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=gpu --prompt="transcribe the audio then translate it to Chinese" --attachment "how_are_you_doing_today.wav" --audio-backend=gpu
-Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
-E0000 00:00:1779349652.889430   13876 engine.cc:544] Failed to create engine: INVALID_ARGUMENT: Audio backend constraint mismatch. Model requires one of [cpu] but Audio backend is GPU
-=== Source Location Trace: ===
-third_party/odml/litert_lm/runtime/engine/engine_settings.cc:92
-third_party/odml/litert_lm/runtime/engine/engine_settings.cc:430
-third_party/odml/litert_lm/runtime/core/engine_impl.cc:274
-An error occurred
-Traceback (most recent call last):
-  File "C:\Python\python313_venv\Lib\site-packages\litert_lm_cli\commands\run.py", line 236, in run_interactive
-    engine_cm = litert_lm.Engine(
-        model_obj.model_path,
-    ...<4 lines>...
-        audio_backend=audio_backend_val,
-    )
-  File "C:\Python\python313_venv\Lib\site-packages\litert_lm\engine.py", line 122, in __init__
-    raise RuntimeError(
-        f"Failed to create LiteRT-LM engine for {self.model_path}"
-    )
-RuntimeError: Failed to create LiteRT-LM engine for C:\Users\lukelin1\.cache\huggingface\hub\models--litert-community--gemma-4-E2B-it-litert-lm\snapshots\a4a831c060880f3733135ad22f10e0e9f758f45d\gemma-4-E2B-it.litertlm
-
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=cpu --prompt="transcribe the audio then translate it to Chinese" --attachment "how_are_you_doing_today.wav" --audio-backend=cpu
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=cpu ^
+More? --prompt="transcribe the audio then translate it to Chinese" ^
+More? --attachment "./sample/how_are_you_doing_today.wav" ^
+More? --audio-backend=cpu
 Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
 How are you doing today?
 今天你怎么样？
 
 
-(python313_venv) C:\Users\lukelin1\Downloads>
+(python313_venv) C:\GitHub\openvino-litert-test>

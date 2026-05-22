@@ -29,8 +29,10 @@ litert-lm run ^
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 --backend=gpu ^
+--enable-speculative-decoding=true ^
 --prompt="What is OpenVINO?"
 ```
+* Use the `--enable-speculative-decoding=true` flag is recommended for GPU backend. [(source)](https://ai.google.dev/edge/litert-lm/cli#mtp)
 ### Run on NPU (Lunar Lake)
 ```
 litert-lm run ^
@@ -56,6 +58,7 @@ litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it_intel_LNL.litertlm ^
 --backend=npu ^
 --prompt="What is the capital of France?"
+
 Downloading gemma-4-E2B-it_intel_LNL.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
 The capital of France is **Paris**.
 ```
@@ -66,8 +69,9 @@ Log file [chat.log](./log/chat.log) is provided for reference.
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 --backend=gpu ^
+--enable-speculative-decoding=true ^
 --prompt="transcribe the audio then translate it to Chinese" ^
---attachment "how_are_you_doing_today.wav" ^
+--attachment "./sample/how_are_you_doing_today.wav" ^
 --audio-backend=cpu
 ```
 * Audio sample [```how_are_you_doing_today.wav```](./sample/how_are_you_doing_today.wav) is attached ([source](https://storage.openvinotoolkit.org/models_contrib/speech/2021.2/librispeech_s5/how_are_you_doing_today.wav))
@@ -75,7 +79,14 @@ litert-lm run ^
 * Supported audio-backend is `cpu`
 ### Sample log
 ```
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=gpu --prompt="transcribe the audio then translate it to Chinese" --attachment "how_are_you_doing_today.wav" --audio-backend=cpu
+(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+--from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+--backend=gpu ^
+--enable-speculative-decoding=true ^
+--prompt="transcribe the audio then translate it to Chinese" ^
+--attachment "./sample/how_are_you_doing_today.wav" ^
+--audio-backend=cpu
+
 Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
 How are you doing today?
 今天你怎么样？
@@ -87,8 +98,9 @@ Log file [transcribe_translate_audio.log](./log/transcribe_translate_audio.log) 
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 --backend=gpu ^
+--enable-speculative-decoding=true ^
 --prompt="describe and translate the picture" ^
---attachment "image_cs.jpg" ^
+--attachment "./sample/image_cs.jpg" ^
 --vision-backend=gpu
 ```
 * Image sample [```image_cs.jpg```](./sample/image_cs.jpg) is attached. It contains a traffic sign written in Czech characters ([`source`](https://c7.alamy.com/comp/2YAX36N/traffic-signs-in-czech-republic-pedestrian-zone-2YAX36N.jpg))
@@ -99,26 +111,12 @@ litert-lm run ^
 ![Input](./sample/image_cs.jpg)
 **Output**
 ```
-**Text on the sign (in Czech):**
-1.  **PĚŠÍ ZÓNA** (at the top)
-2.  **ZÁSOBOVÁNÍ** (in the middle section)
-3.  **IZS CBS V ZÁSAHU** (below the middle section)
-4.  **0 - 24 h** (at the bottom)
-
-**Graphic:**
-In the center of the sign is a blue circular graphic depicting a stylized illustration of a person (likely an adult) holding the hand of a child, suggesting a pedestrian area.
-
-**Setting:**
-The sign is mounted outdoors, likely on a pole. In the background, there are trees and some buildings visible, suggesting an urban or suburban street setting.
-
-### Translation
-
-Here is the translation of the Czech text into English:
+Here is the translation of the text from Czech into English:
 
 *   **PĚŠÍ ZÓNA:** Pedestrian Zone (or Pedestrian Area)
-*   **ZÁSOBOVÁNÍ:** (This word is slightly ambiguous without more context, but in the context of traffic signs, it might relate to "supply," "provision," or perhaps be part of a specific local regulation. Given the context of the other text, it might be a specific local term.)
-*   **IZS CBS V ZÁSAHU:** (This appears to be an acronym or specific regulatory instruction. Without knowing the local jurisdiction, a direct, precise translation is difficult, but it likely refers to specific rules or services related to the pedestrian zone.)
-*   **0 - 24 h:** 0 - 24 hours (indicating the time frame for the regulation)
+*   **ZÁSOBOVÁNÍ:** (This word is slightly less common in this context, but it relates to "supply" or "provision." In the context of a pedestrian zone, it might be part of a specific local regulation, but the main meaning is "Pedestrian Zone.")
+*   **IZS, CBS V ZÁSAHU:** This is likely an abbreviation or specific local reference. Without further context, it's hard to translate precisely, but it points to specific authorities or regulations ("IZS, CBS" might be acronyms for local departments or rules).
+*   **0 - 24 h:** 0 - 24 hours (indicating the zone is active 24/7)
 ```
 Log file [describe_translate_image.log](./log/describe_translate_image.log) is provided for reference.
 

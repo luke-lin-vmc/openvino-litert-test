@@ -1,41 +1,10 @@
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=gpu --prompt="describe and translate the picture" --attachment "image_cs.jpg" --vision-backend=cpu
-Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
-This is a photograph of a **road sign** in a Czech language context.
-
-Here is a detailed description and translation:
-
-### Description of the Image
-
-The image features a rectangular, white road sign with a dark border. The sign has text and a prominent graphic in blue.
-
-**Text on the sign (in Czech):**
-1.  **PĚŠÍ ZÓNA** (at the top)
-2.  **ZÁSOBOVÁNÍ** (in the middle section)
-3.  **IZS CBS V ZÁSAHU** (below the middle section)
-4.  **0 - 24 h** (at the bottom)
-
-**Graphic:**
-In the center of the sign is a blue circular graphic depicting a stylized illustration of a person (likely an adult) holding the hand of a child, suggesting a pedestrian area.
-
-**Setting:**
-The sign is mounted outdoors, likely on a pole. In the background, there are trees and some buildings visible, suggesting an urban or suburban street setting.
-
-### Translation
-
-Here is the translation of the Czech text into English:
-
-*   **PĚŠÍ ZÓNA:** Pedestrian Zone (or Pedestrian Area)
-*   **ZÁSOBOVÁNÍ:** (This word is slightly ambiguous without more context, but in the context of traffic signs, it might relate to "supply," "provision," or perhaps be part of a specific local regulation. Given the context of the other text, it might be a specific local term.)
-*   **IZS CBS V ZÁSAHU:** (This appears to be an acronym or specific regulatory instruction. Without knowing the local jurisdiction, a direct, precise translation is difficult, but it likely refers to specific rules or services related to the pedestrian zone.)
-*   **0 - 24 h:** 0 - 24 hours (indicating the time frame for the regulation)
-
-### Summary of Meaning
-
-The sign indicates that the area is a **Pedestrian Zone**. It also specifies certain rules or services (**IZS CBS V ZÁSAHU**) that are in effect **24 hours a day** (0 to 24 hours).
-
-(python313_venv) C:\Users\lukelin1\Downloads>(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=gpu --prompt="describe and translate the picture" --attachment "image_cs.jpg" --vision-backend=gpu
+(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=gpu ^
+More? --enable-speculative-decoding=true ^
+More? --prompt="describe and translate the picture" ^
+More? --attachment "./sample/image_cs.jpg" ^
+More? --vision-backend=gpu
 Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
 This is a photograph of a **traffic sign** in a language other than English.
 
@@ -47,100 +16,30 @@ The image features a rectangular, white sign with a black border, typical of reg
 
 **Text on the sign (in Czech):**
 1.  **Top:** PĚŠÍ ZÓNA
-2.  **Middle:** ZÁSOBOVÁNÍ
+2.  **Middle (below the graphic):** ZÁSOBOVÁNÍ
 3.  **Bottom:** IZS, CBS V ZÁSAHU
 4.  **Bottom line:** 0 - 24 h
 
 **Graphic Symbol:**
-The central graphic is a blue circle containing a silhouette of a person (an adult figure) holding the hand of a child. This symbol is universally recognized to indicate a pedestrian area.
+The central graphic is a blue circle containing a silhouette of a person (likely an adult) holding the hand of a child. This symbol is universally recognized to indicate a pedestrian area.
 
 **Context:**
-The sign is mounted outdoors, likely on a pole, with some greenery and buildings visible in the background, suggesting an urban or suburban setting.
+The sign is mounted outdoors, likely on a pole, and the background shows some greenery and buildings, suggesting an urban or suburban setting.
 
 ### Translation
 
-Here is the translation of the text from Czech to English:
+Here is the translation of the text from Czech into English:
 
 *   **PĚŠÍ ZÓNA:** Pedestrian Zone (or Pedestrian Area)
-*   **ZÁSOBOVÁNÍ:** (This word is slightly less common in this context, but it relates to "supply" or "provision." In the context of a pedestrian zone, it might be part of a specific local regulation, perhaps meaning "Provision" or "Supply.")
-*   **IZS, CBS V ZÁSAHU:** This is likely an acronym or specific local reference. Without further context, it's hard to give a definitive translation, but it points to a specific authority or department (IZS, CBS) operating in the area.
-*   **0 - 24 h:** 0 - 24 hours (indicating the zone is active 24 hours a day).
+*   **ZÁSOBOVÁNÍ:** (This word is slightly less common in this context, but it relates to "supply" or "provision." In the context of a pedestrian zone, it might be part of a specific local regulation, but the main meaning is "Pedestrian Zone.")
+*   **IZS, CBS V ZÁSAHU:** This is likely an abbreviation or specific local reference. Without further context, it's hard to translate precisely, but it points to specific authorities or regulations ("IZS, CBS" might be acronyms for local departments or rules).
+*   **0 - 24 h:** 0 - 24 hours (indicating the zone is active 24/7)
 
-### Summary of Meaning
+### Overall Meaning
 
-The sign is a **Pedestrian Zone** sign. It indicates that the area is designated for pedestrians, and the regulations or services (related to "ZÁSOBOVÁNÍ" and the mentioned authorities) are in effect from 00:00 to 24:00 hours.
+The sign is a **Pedestrian Zone** sign, indicating an area where walking is prioritized, and it specifies the operating hours or the rules governing that zone.
 
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=cpu --prompt="describe and translate the picture" --attachment "image_cs.jpg" --vision-backend=gpu
-Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
-This is a photograph of a **traffic sign** in a Czech context.
-
-Here is a detailed description and translation:
-
----
-
-### Description of the Image
-
-The image features a rectangular, white traffic sign with a black border, mounted outdoors, likely on a pole. The sign contains text and a graphic symbol.
-
-**Text on the sign (in Czech):**
-1.  **Top:** "PĚŠÍ ZÓNA"
-2.  **Middle (below the graphic):** "ZÁSOBOVÁNÍ"
-3.  **Bottom:** "IZS, CBS V ZÁSAHU 0 - 24 h"
-
-**Graphic Symbol:**
-The central graphic is a blue circle containing a silhouette of a person (an adult figure) holding the hand of a child. This symbol is universally recognized as indicating a pedestrian area or a zone where pedestrians have priority.
-
-**Overall Impression:**
-The sign clearly indicates a pedestrian zone, likely specifying rules or services related to that zone (such as emergency services or specific access times).
-
----
-
-### Translation
-
-Here is the translation of the text on the sign:
-
-| Czech Text | English Translation | Notes |
-| :--- | :--- | :--- |
-| **PĚŠÍ ZÓNA** | **PEDESTRIAN ZONE** (or Pedestrian Area) | This is the main heading. |
-| **ZÁSOBOVÁNÍ** | **SUPPLY / PROVISIONING** (or perhaps related to a specific service) | This word is slightly ambiguous without more context, but in a traffic sign context, it might relate to emergency supplies or service availability. |
-| **IZS, CBS V ZÁSAHU 0 - 24 h** | **IZS, CBS ON CALL 0 - 24 h** | This likely refers to the availability of specific services (IZS and CBS) during the 24-hour period. |
-
-**Summary of the Sign's Meaning:**
-The sign designates a **Pedestrian Zone** and provides information about the availability of specific services (IZS and CBS) around the clock (24 hours).
-
-(python313_venv) C:\Users\lukelin1\Downloads>
-(python313_venv) C:\Users\lukelin1\Downloads>litert-lm run --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm --backend=cpu --prompt="describe and translate the picture" --attachment "image_cs.jpg" --vision-backend=cpu
-Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
-This is a photograph of a **road sign** in a Czech or Slovak language.
-
-Here is a detailed description and translation:
-
-### Description of the Image
-
-The image features a rectangular, white road sign with black text and graphics. The sign is mounted on a pole outdoors, likely in an urban or suburban setting, with trees and buildings visible in the background.
-
-**Key elements of the sign:**
-
-1.  **Top Section:** The main heading is in large, bold, black capital letters: **"PĚŠÍ ZÓNA"**.
-2.  **Central Graphic:** Below the heading is a large blue circular graphic. Inside the circle, there is a silhouette of a person (likely a pedestrian) holding the hand of a child. This graphic universally signifies a pedestrian area or crossing.
-3.  **Bottom Section (Text):** Below the graphic, there is additional text in black capital letters:
-    *   **"ZÁSOBOVÁNÍ"**
-    *   **"IZS, CBS V ZÁSAHU"**
-    *   **"0 - 24 h"**
-
-### Translation
-
-Here is the translation of the text from Czech/Slovak to English:
-
-*   **PĚŠÍ ZÓNA:** Pedestrian Zone / Pedestrian Area
-*   **ZÁSOBOVÁNÍ:** Supply / Provisioning (This term might be context-specific, but in a traffic context, it could relate to access or service.)
-*   **IZS, CBS V ZÁSAHU:** This is likely an abbreviation or specific local reference. Without further context, it's hard to translate definitively, but it points to specific services or entities (IZS, CBS) being available in the area.
-*   **0 - 24 h:** 0 - 24 hours (indicating 24-hour availability)
-
-### Summary of Meaning
-
-The sign indicates that the area is a **Pedestrian Zone**. It also informs drivers that there is **supply/service available (IZS, CBS) 24 hours a day.**
-
-(python313_venv) C:\Users\lukelin1\Downloads>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
