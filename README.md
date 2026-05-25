@@ -15,16 +15,22 @@ pip install --upgrade openvino
 ```
 Log file [installation.log](./log/installation.log) is provided for reference.
 
-## Example - Chat
+## Run Examples
+* [Chat](#example---chat)
+* [Audio Transcription and Translation](#example---audio-transcription-and-translation)
+* [Image Description and Translation](#example---image-description-and-translation)
+* [Function Calling / Tools](#example---function-calling--tools)
+
+### Example - Chat
 Run below commands to download Gemma4 and run the model
-### Run on CPU
+#### Run on CPU
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 --backend=cpu ^
 --prompt="What is OpenVINO?"
 ```
-### Run on GPU
+#### Run on GPU
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
@@ -33,7 +39,7 @@ litert-lm run ^
 --prompt="What is OpenVINO?"
 ```
 * Use the `--enable-speculative-decoding=true` flag is recommended for GPU backend. [(source)](https://ai.google.dev/edge/litert-lm/cli#mtp)
-### Run on NPU (Lunar Lake)
+#### Run on NPU (Lunar Lake)
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it_intel_LNL.litertlm ^
@@ -41,7 +47,7 @@ litert-lm run ^
 --prompt="What is OpenVINO?"
 ```
 * Please note the model name changes to `gemma-4-E2B-it_intel_LNL.litertlm`
-### Run on NPU (Panther Lake)
+#### Run on NPU (Panther Lake)
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it_intel_PTL.litertlm ^
@@ -49,10 +55,10 @@ litert-lm run ^
 --prompt="What is OpenVINO?"
 ```
 * Please note the model name changes to `gemma-4-E2B-it_intel_PTL.litertlm`
-### Note
+#### Note
 * There is no need to worry about models being re-downloaded, as they will be cached under `%USERPROFILE%\.cache\huggingface\hub\` after they are downloaded once
 * You may also manually download the models in advance from [HuggingFace](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/tree/main)
-### Sample log
+#### Sample log
 ```
 (python313_venv) C:\Users\lukelin1\Downloads>litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it_intel_LNL.litertlm ^
@@ -64,7 +70,7 @@ The capital of France is **Paris**.
 ```
 Log file [chat.log](./log/chat.log) is provided for reference.
 
-## Example - Audio Transcription and Translation
+### Example - Audio Transcription and Translation
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
@@ -77,7 +83,7 @@ litert-lm run ^
 * Audio sample [```how_are_you_doing_today.wav```](./sample/how_are_you_doing_today.wav) is attached ([source](https://storage.openvinotoolkit.org/models_contrib/speech/2021.2/librispeech_s5/how_are_you_doing_today.wav))
 * Supported backends are `cpu` and `gpu`
 * Supported audio-backend is `cpu`
-### Sample log
+#### Sample log
 ```
 (python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
@@ -93,7 +99,7 @@ How are you doing today?
 ```
 Log file [transcribe_translate_audio.log](./log/transcribe_translate_audio.log) is provided for reference.
 
-## Example - Image Description and Translation
+### Example - Image Description and Translation
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
@@ -106,7 +112,7 @@ litert-lm run ^
 * Image sample [```image_cs.jpg```](./sample/image_cs.jpg) is attached. It contains a traffic sign written in Czech characters ([`source`](https://c7.alamy.com/comp/2YAX36N/traffic-signs-in-czech-republic-pedestrian-zone-2YAX36N.jpg))
 * Supported backends are `cpu` and `gpu`
 * Supported vision-backends are `cpu` and `gpu`
-### Sample log
+#### Sample log
 **Input**
 ![Input](./sample/image_cs.jpg)
 **Output**
@@ -120,8 +126,8 @@ Here is the translation of the text from Czech into English:
 ```
 Log file [describe_translate_image.log](./log/describe_translate_image.log) is provided for reference.
 
-## Example - Function Calling / Tools
-You can run tools with presets. [(link)](https://ai.google.dev/edge/litert-lm/cli#function_calling_tools)
+### Example - Function Calling / Tools
+You can run tools with presets. [(reference)](https://ai.google.dev/edge/litert-lm/cli#function_calling_tools)
 
 Here we create a [preset.py](./tool/preset.py) that can get stock price and get current time.
 
@@ -137,7 +143,7 @@ litert-lm run ^
 --enable-speculative-decoding=true ^
 --preset="./tool/preset.py"
 ```
-### Sample log
+#### Sample log
 ```
 (python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
