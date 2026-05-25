@@ -1,0 +1,37 @@
+(python313_venv) C:\GitHub\openvino-litert-test>dir .\tool\*
+ Volume in drive C has no label.
+ Volume Serial Number is 6E19-CE53
+
+ Directory of C:\GitHub\openvino-litert-test\tool
+
+05/25/2026  01:20 PM    <DIR>          .
+05/25/2026  01:17 PM    <DIR>          ..
+05/25/2026  01:19 PM             1,315 preset.py
+05/25/2026  01:20 PM    <DIR>          __pycache__
+               1 File(s)          1,315 bytes
+               3 Dir(s)  521,653,657,600 bytes free
+
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=gpu ^
+More? --enable-speculative-decoding=true ^
+More? --preset="./tool/preset.py"
+Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
+Loading preset from ./tool/preset.py:
+- System instruction: You are a helpful assistant with access to tools.
+- Tools:
+  - get_current_time
+  - get_stock_price
+[enter] submit | [ctrl+j] newline | [ctrl+c] clear/exit
+
+> What time is it?
+[tool_call] {"name": "get_current_time", "arguments": {}}
+[tool_response] "2026-05-25 13:24:49"
+It is currently 1:24 PM on May 25, 2026.
+> What is Intel's stock price?
+[tool_call] {"name": "get_stock_price", "arguments": {"symbol": "INTC"}}
+[tool_response] "Symbol: INTC\nPrice: 119.84 USD\nChange: +0.49 (+0.41%)\nPrevious Close: 119.35 USD"
+The current stock price for Intel (INTC) is $119.84 USD, which is a change of +0.49 (+0.41%) from the previous close of $119.35 USD.
+>

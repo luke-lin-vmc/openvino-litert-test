@@ -15,7 +15,7 @@ pip install --upgrade openvino
 ```
 Log file [installation.log](./log/installation.log) is provided for reference.
 
-## Chat
+## Example - Chat
 Run below commands to download Gemma4 and run the model
 ### Run on CPU
 ```
@@ -40,7 +40,7 @@ litert-lm run ^
 --backend=npu ^
 --prompt="What is OpenVINO?"
 ```
-* Please note the model name becomes `gemma-4-E2B-it_intel_LNL.litertlm`
+* Please note the model name changes to `gemma-4-E2B-it_intel_LNL.litertlm`
 ### Run on NPU (Panther Lake)
 ```
 litert-lm run ^
@@ -48,10 +48,10 @@ litert-lm run ^
 --backend=npu ^
 --prompt="What is OpenVINO?"
 ```
-* Please note the model name becomes `gemma-4-E2B-it_intel_PTL.litertlm`
+* Please note the model name changes to `gemma-4-E2B-it_intel_PTL.litertlm`
 ### Note
 * There is no need to worry about models being re-downloaded, as they will be cached under `%USERPROFILE%\.cache\huggingface\hub\` after they are downloaded once
-* Or you may manually download models from [HuggingFace](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/tree/main)
+* You may also manually download the models in advance from [HuggingFace](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/tree/main)
 ### Sample log
 ```
 (python313_venv) C:\Users\lukelin1\Downloads>litert-lm run ^
@@ -64,7 +64,7 @@ The capital of France is **Paris**.
 ```
 Log file [chat.log](./log/chat.log) is provided for reference.
 
-## Audio Transcription and Translation
+## Example - Audio Transcription and Translation
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
@@ -75,7 +75,7 @@ litert-lm run ^
 --audio-backend=cpu
 ```
 * Audio sample [```how_are_you_doing_today.wav```](./sample/how_are_you_doing_today.wav) is attached ([source](https://storage.openvinotoolkit.org/models_contrib/speech/2021.2/librispeech_s5/how_are_you_doing_today.wav))
-* Supported backend are `cpu` and `gpu`
+* Supported backends are `cpu` and `gpu`
 * Supported audio-backend is `cpu`
 ### Sample log
 ```
@@ -93,7 +93,7 @@ How are you doing today?
 ```
 Log file [transcribe_translate_audio.log](./log/transcribe_translate_audio.log) is provided for reference.
 
-## Image Description and Translation
+## Example - Image Description and Translation
 ```
 litert-lm run ^
 --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
@@ -104,8 +104,8 @@ litert-lm run ^
 --vision-backend=gpu
 ```
 * Image sample [```image_cs.jpg```](./sample/image_cs.jpg) is attached. It contains a traffic sign written in Czech characters ([`source`](https://c7.alamy.com/comp/2YAX36N/traffic-signs-in-czech-republic-pedestrian-zone-2YAX36N.jpg))
-* Supported backend are `cpu` and `gpu`
-* Supported vision-backend are `cpu` and `gpu`
+* Supported backends are `cpu` and `gpu`
+* Supported vision-backends are `cpu` and `gpu`
 ### Sample log
 **Input**
 ![Input](./sample/image_cs.jpg)
@@ -120,6 +120,49 @@ Here is the translation of the text from Czech into English:
 ```
 Log file [describe_translate_image.log](./log/describe_translate_image.log) is provided for reference.
 
+## Example - Function Calling / Tools
+You can run tools with presets. [(link)](https://ai.google.dev/edge/litert-lm/cli#function_calling_tools)
+
+Here we create a [preset.py](./tool/preset.py) that can get stock price and get current time.
+
+Install required package
+```
+pip install yfinance
+```
+Run below command
+```
+litert-lm run ^
+--from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+--backend=gpu ^
+--enable-speculative-decoding=true ^
+--preset="./tool/preset.py"
+```
+### Sample log
+```
+(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=gpu ^
+More? --enable-speculative-decoding=true ^
+More? --preset="./tool/preset.py"
+Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
+Loading preset from ./tool/preset.py:
+- System instruction: You are a helpful assistant with access to tools.
+- Tools:
+  - get_current_time
+  - get_stock_price
+[enter] submit | [ctrl+j] newline | [ctrl+c] clear/exit
+
+> What time is it?
+[tool_call] {"name": "get_current_time", "arguments": {}}
+[tool_response] "2026-05-25 13:24:49"
+It is currently 1:24 PM on May 25, 2026.
+> What is Intel's stock price?
+[tool_call] {"name": "get_stock_price", "arguments": {"symbol": "INTC"}}
+[tool_response] "Symbol: INTC\nPrice: 119.84 USD\nChange: +0.49 (+0.41%)\nPrevious Close: 119.35 USD"
+The current stock price for Intel (INTC) is $119.84 USD, which is a change of +0.49 (+0.41%) from the previous close of $119.35 USD.
+>
+```
+Log file [function_calling.log](./log/function_calling.log) is provided for reference.
 
 # Reference
 * [OpenVINO™ backend for LiteRT: Optimize NPU performance on Intel® Core™ Ultra processors](https://www.intel.com/content/www/us/en/developer/articles/community/litert-unlocks-core-ultra-npu-performance-for-aipc.html)
@@ -129,5 +172,3 @@ Log file [describe_translate_image.log](./log/describe_translate_image.log) is p
 # Future Works
 * Try classical models using LiteRT on Intel NPU, for both JIT and AOT model
 <br>https://ai.google.dev/edge/litert/next/intel</br>
-* Try LiteRT-LM with Function Calling/Tools
-<br>https://ai.google.dev/edge/litert-lm/cli#function_calling_tools</br>
