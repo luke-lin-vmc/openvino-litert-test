@@ -30,6 +30,7 @@ litert-lm run ^
 --backend=cpu ^
 --prompt="What is OpenVINO?"
 ```
+* Remove the `--prompt` flag for interactive mode
 #### Run on GPU
 ```
 litert-lm run ^
@@ -158,16 +159,18 @@ Loading preset from ./tool/preset.py:
   - get_current_time
   - get_stock_price
 [enter] submit | [ctrl+j] newline | [ctrl+c] clear/exit
-
+```
+```
 > What time is it?
 [tool_call] {"name": "get_current_time", "arguments": {}}
 [tool_response] "2026-05-25 13:24:49"
 It is currently 1:24 PM on May 25, 2026.
+```
+```
 > What is Intel's stock price?
 [tool_call] {"name": "get_stock_price", "arguments": {"symbol": "INTC"}}
 [tool_response] "Symbol: INTC\nPrice: 119.84 USD\nChange: +0.49 (+0.41%)\nPrevious Close: 119.35 USD"
 The current stock price for Intel (INTC) is $119.84 USD, which is a change of +0.49 (+0.41%) from the previous close of $119.35 USD.
->
 ```
 Log file [function_calling.log](./log/function_calling.log) is provided for reference.
 
