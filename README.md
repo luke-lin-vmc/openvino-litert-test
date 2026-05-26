@@ -114,7 +114,8 @@ litert-lm run ^
 * Supported vision-backends are `cpu` and `gpu`
 #### Sample log
 **Input**
-![Input](./sample/image_cs.jpg)
+<p><img src="./sample/image_cs.jpg" width="325" alt="Czech traffic signs"></p>
+
 **Output**
 ```
 Here is the translation of the text from Czech into English:
