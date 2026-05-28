@@ -67,7 +67,10 @@ python main.py --model mobilenet_v2.tflite --image coco.jpg
 ```
 * You can also test the quantized `mobilenet_v2.int8.tflite` model
 
-Expected Result
+**Input**
+<p><img src="./coco.jpg" width="400" alt="Czech traffic signs"></p>
+
+**Expected Result**
 ```
 1: n02099267 flat-coated retriever (0.443499)
 2: n02099712 Labrador retriever (0.324956)
