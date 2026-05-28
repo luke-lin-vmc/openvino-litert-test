@@ -1,0 +1,150 @@
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>python --version
+Python 3.13.13
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>python -m pip install --upgrade pip
+Requirement already satisfied: pip in C:\Python\python313_venv\Lib\site-packages (26.1.1)
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>python -m pip list
+Package Version
+------- -------
+pip     26.1.1
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>pip install --pre --extra-index-url https://storage.openvinotoolkit.org/simple/wheels/nightly ai-edge-litert-nightly ai-edge-litert-sdk-intel-nightly
+Looking in indexes: https://pypi.org/simple, https://storage.openvinotoolkit.org/simple/wheels/nightly
+Collecting ai-edge-litert-nightly
+  Downloading ai_edge_litert_nightly-2.2.0.dev20260527-cp313-cp313-win_amd64.whl.metadata (2.4 kB)
+Collecting ai-edge-litert-sdk-intel-nightly
+  Downloading ai_edge_litert_sdk_intel_nightly-2.2.0.dev20260527.tar.gz (7.2 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting backports.strenum (from ai-edge-litert-nightly)
+  Using cached backports_strenum-1.2.8-py3-none-any.whl.metadata (3.6 kB)
+Collecting flatbuffers (from ai-edge-litert-nightly)
+  Using cached flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting numpy>=1.23.2 (from ai-edge-litert-nightly)
+  Using cached numpy-2.4.6-cp313-cp313-win_amd64.whl.metadata (6.6 kB)
+Collecting tqdm (from ai-edge-litert-nightly)
+  Using cached tqdm-4.67.3-py3-none-any.whl.metadata (57 kB)
+Collecting typing-extensions (from ai-edge-litert-nightly)
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting protobuf (from ai-edge-litert-nightly)
+  Using cached protobuf-7.35.0-cp310-abi3-win_amd64.whl.metadata (595 bytes)
+Collecting openvino==2026.2.0.dev20260506 (from ai-edge-litert-sdk-intel-nightly)
+  Using cached openvino-2026.2.0.dev20260506-21820-cp313-cp313-win_amd64.whl (76.0 MB)
+Collecting openvino-telemetry>=2023.2.1 (from openvino==2026.2.0.dev20260506->ai-edge-litert-sdk-intel-nightly)
+  Using cached openvino_telemetry-2025.2.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting colorama (from tqdm->ai-edge-litert-nightly)
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Downloading ai_edge_litert_nightly-2.2.0.dev20260527-cp313-cp313-win_amd64.whl (16.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 18.5 MB/s  0:00:01
+Using cached numpy-2.4.6-cp313-cp313-win_amd64.whl (12.3 MB)
+Using cached openvino_telemetry-2025.2.0-py3-none-any.whl (25 kB)
+Using cached backports_strenum-1.2.8-py3-none-any.whl (7.9 kB)
+Using cached flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Using cached protobuf-7.35.0-cp310-abi3-win_amd64.whl (439 kB)
+Using cached tqdm-4.67.3-py3-none-any.whl (78 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Building wheels for collected packages: ai-edge-litert-sdk-intel-nightly
+  Building wheel for ai-edge-litert-sdk-intel-nightly (pyproject.toml) ... done
+  Created wheel for ai-edge-litert-sdk-intel-nightly: filename=ai_edge_litert_sdk_intel_nightly-2.2.0.dev20260527-cp313-cp313-win_amd64.whl size=30961565 sha256=301595aae96dee57891d7738e713b6b1f387d2488918226c54d5d175567f19f1
+  Stored in directory: c:\users\lukelin1\appdata\local\pip\cache\wheels\7d\cb\bb\7560db9ca7731f4347fb991c56ecc45114900de0e6c8034c82
+Successfully built ai-edge-litert-sdk-intel-nightly
+Installing collected packages: openvino-telemetry, flatbuffers, typing-extensions, protobuf, numpy, colorama, backports.strenum, tqdm, openvino, ai-edge-litert-sdk-intel-nightly, ai-edge-litert-nightly
+Successfully installed ai-edge-litert-nightly-2.2.0.dev20260527 ai-edge-litert-sdk-intel-nightly-2.2.0.dev20260527 backports.strenum-1.2.8 colorama-0.4.6 flatbuffers-25.12.19 numpy-2.4.6 openvino-2026.2.0.dev20260506 openvino-telemetry-2025.2.0 protobuf-7.35.0 tqdm-4.67.3 typing-extensions-4.15.0
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>pip list
+Package                          Version              Build
+-------------------------------- -------------------- -----
+ai-edge-litert-nightly           2.2.0.dev20260527
+ai-edge-litert-sdk-intel-nightly 2.2.0.dev20260527
+backports.strenum                1.2.8
+colorama                         0.4.6
+flatbuffers                      25.12.19
+numpy                            2.4.6
+openvino                         2026.2.0.dev20260506 21820
+openvino-telemetry               2025.2.0
+pip                              26.1.1
+protobuf                         7.35.0
+tqdm                             4.67.3
+typing_extensions                4.15.0
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>pip install pillow
+Collecting pillow
+  Using cached pillow-12.2.0-cp313-cp313-win_amd64.whl.metadata (9.0 kB)
+Using cached pillow-12.2.0-cp313-cp313-win_amd64.whl (7.1 MB)
+Installing collected packages: pillow
+Successfully installed pillow-12.2.0
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>pip install torch
+Collecting torch
+  Using cached torch-2.12.0-cp313-cp313-win_amd64.whl.metadata (31 kB)
+Collecting filelock (from torch)
+  Using cached filelock-3.29.0-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: typing-extensions>=4.10.0 in C:\Python\python313_venv\Lib\site-packages (from torch) (4.15.0)
+Collecting setuptools<82 (from torch)
+  Downloading setuptools-81.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch)
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch)
+  Using cached networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch)
+  Using cached fsspec-2026.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch)
+  Downloading markupsafe-3.0.3-cp313-cp313-win_amd64.whl.metadata (2.8 kB)
+Downloading torch-2.12.0-cp313-cp313-win_amd64.whl (123.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.0/123.0 MB 18.3 MB/s  0:00:06
+Downloading setuptools-81.0.0-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 15.3 MB/s  0:00:00
+Using cached fsspec-2026.4.0-py3-none-any.whl (203 kB)
+Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 17.2 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 17.3 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 12.1 MB/s  0:00:00
+Using cached filelock-3.29.0-py3-none-any.whl (39 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp313-cp313-win_amd64.whl (15 kB)
+Installing collected packages: mpmath, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+Successfully installed MarkupSafe-3.0.3 filelock-3.29.0 fsspec-2026.4.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 setuptools-81.0.0 sympy-1.14.0 torch-2.12.0
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>pip install torchvision
+Collecting torchvision
+  Downloading torchvision-0.27.0-cp313-cp313-win_amd64.whl.metadata (5.5 kB)
+Requirement already satisfied: numpy in C:\Python\python313_venv\Lib\site-packages (from torchvision) (2.4.6)
+Requirement already satisfied: torch==2.12.0 in C:\Python\python313_venv\Lib\site-packages (from torchvision) (2.12.0)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in C:\Python\python313_venv\Lib\site-packages (from torchvision) (12.2.0)
+Requirement already satisfied: filelock in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (3.29.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (4.15.0)
+Requirement already satisfied: setuptools<82 in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (81.0.0)
+Requirement already satisfied: sympy>=1.13.3 in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (3.6.1)
+Requirement already satisfied: jinja2 in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in C:\Python\python313_venv\Lib\site-packages (from torch==2.12.0->torchvision) (2026.4.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in C:\Python\python313_venv\Lib\site-packages (from sympy>=1.13.3->torch==2.12.0->torchvision) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in C:\Python\python313_venv\Lib\site-packages (from jinja2->torch==2.12.0->torchvision) (3.0.3)
+Downloading torchvision-0.27.0-cp313-cp313-win_amd64.whl (4.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 11.0 MB/s  0:00:00
+Installing collected packages: torchvision
+Successfully installed torchvision-0.27.0
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>python check.py
+Backend: intel_openvino
+Dispatch: C:\Python\python313_venv\Lib\site-packages\ai_edge_litert\vendors\intel_openvino\dispatch
+OpenVINO: 2026.2.0-21820-9a25caa5a15
+SDK libs: ['openvino_intel_npu_compiler.dll', 'openvino_intel_npu_compiler_loader.dll']
+Available devices: ['CPU', 'GPU', 'NPU']
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>

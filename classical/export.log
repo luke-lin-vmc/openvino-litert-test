@@ -1,0 +1,200 @@
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ python --version
+Python 3.10.12
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ pip install --upgrade pip
+Requirement already satisfied: pip in /home/intel/Python/python310_env/lib/python3.10/site-packages (26.1.1)
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ pip list
+Package    Version
+---------- -------
+pip        26.1.1
+setuptools 59.6.0
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ pip install uv
+Collecting uv
+  Using cached uv-0.11.16-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+Using cached uv-0.11.16-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.7 MB)
+Installing collected packages: uv
+Successfully installed uv-0.11.16
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ cat pyproject.toml 
+[project]
+name = "imagenet-e2e-sample"
+version = "0.1.0"
+description = "A LiteRT sample"
+readme = "README.md"
+requires-python = ">=3.10, <3.14"
+dependencies = [
+    "ai-edge-litert>=2.1.2",
+    "ai-edge-quantizer>=0.4.2",
+    "litert-torch>=0.8.0",
+    "numpy>=2.2.6",
+    "pillow>=12.0.0",
+    "torch>=2.8.0",
+    "torchvision>=0.24.0",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }
+
+# The pytorch build must have jax support otherwise you may get errors like "PyTorch is not linked with support for jax devices" during model conversion.
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ uv run main.py convert --arch mobilenet_v2
+warning: `VIRTUAL_ENV=/home/intel/Python/python310_env` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Using CPython 3.10.12 interpreter at: /usr/bin/python3
+Creating virtual environment at: .venv
+Installed 69 packages in 158ms
+Failed to load /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Failed to load /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_cutlass_90a.abi3.so
+W0527 14:46:08.262000 99232 .venv/lib/python3.10/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+/home/intel/imagenet/.venv/lib/python3.10/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+  warnings.warn(
+(00:00) [START] LiteRT-Torch Convert
+(00:00) [START] LiteRT-Torch Convert > Torch Export: serving_default
+(00:01) [START] LiteRT-Torch Convert > Torch Export: serving_default > 
+ExportedProgram Run Decompositions
+/usr/lib/python3.10/copyreg.py:101: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+(00:03) [ DONE] LiteRT-Torch Convert > Torch Export: serving_default > 
+ExportedProgram Run Decompositions (+00:01)
+(00:03) [ DONE] LiteRT-Torch Convert > Torch Export: serving_default (+00:02)
+(00:03) [START] LiteRT-Torch Convert > Run FX Passes
+(00:03) [START] LiteRT-Torch Convert > Run FX Passes > ExportedProgram Run 
+Decompositions
+/usr/lib/python3.10/copyreg.py:101: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+(00:05) [ DONE] LiteRT-Torch Convert > Run FX Passes > ExportedProgram Run 
+Decompositions (+00:01)
+(00:05) [ DONE] LiteRT-Torch Convert > Run FX Passes (+00:02)
+(00:05) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default
+(00:05) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions
+/usr/lib/python3.10/copyreg.py:101: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+(00:07) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions (+00:02)
+(00:07) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions
+(00:07) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions (+00:00)
+(00:07) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default > Create 
+MLIR Module
+(00:11) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default > Create 
+MLIR Module (+00:03)
+(00:11) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default (+00:05)
+/home/intel/imagenet/.venv/lib/python3.10/site-packages/litert_torch/_convert/signature.py:52: FutureWarning: `treespec.children_specs` is deprecated. Use `treespec.child(index)` to access a single child, or `treespec.children()` to get all children.
+  args_spec, kwargs_spec = spec.children_specs
+/home/intel/imagenet/.venv/lib/python3.10/site-packages/litert_torch/_convert/signature.py:58: FutureWarning: `treespec.children_specs` is deprecated. Use `treespec.child(index)` to access a single child, or `treespec.children()` to get all children.
+  kwargs_spec.children_specs, kwargs_spec.context
+(00:11) [START] LiteRT-Torch Convert > Merge MLIR Modules
+(00:11) [ DONE] LiteRT-Torch Convert > Merge MLIR Modules (+00:00)
+(00:11) [START] LiteRT-Torch Convert > Run LiteRT Converter Passes
+(00:11) [ DONE] LiteRT-Torch Convert > Run LiteRT Converter Passes (+00:00)
+(00:11) [ DONE] LiteRT-Torch Convert (+00:11)
+(00:00) [START] Write Model to /home/intel/imagenet/mobilenet_v2.tflite
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1779864380.786419   99232 flatbuffer_export.cc:4346] Estimated count of arithmetic ops: 608.444 M  ops, equivalently 304.222 M  MACs
+(00:00) [ DONE] Write Model to /home/intel/imagenet/mobilenet_v2.tflite (+00:00)
+Saved LiteRT model to: /home/intel/imagenet/mobilenet_v2.tflite
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ ls -la
+total 14084
+drwxrwxr-x  3 intel intel     4096  五  27 14:46 .
+drwxr-x--- 27 intel intel     4096  五  27 14:42 ..
+-rw-rw-r--  1 intel intel    16798  五  27 14:25 main.py
+-rw-rw-r--  1 intel intel 14078620  五  27 14:46 mobilenet_v2.tflite
+-rw-rw-r--  1 intel intel      676  五  27 14:40 pyproject.toml
+-rw-rw-r--  1 intel intel   299198  五  27 14:46 uv.lock
+drwxrwxr-x  5 intel intel     4096  五  27 14:46 .venv
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ uv run main.py convert --arch mobilenet_v2 --output mobilenet_v2.int8.tflite --quantize
+warning: `VIRTUAL_ENV=/home/intel/Python/python310_env` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Failed to load /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Failed to load /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /home/intel/imagenet/.venv/lib/python3.10/site-packages/torchao/_C_cutlass_90a.abi3.so
+W0527 14:58:32.323000 100166 .venv/lib/python3.10/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+/home/intel/imagenet/.venv/lib/python3.10/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+  warnings.warn(
+(00:00) [START] LiteRT-Torch Convert
+(00:00) [START] LiteRT-Torch Convert > Torch Export: serving_default
+(00:00) [START] LiteRT-Torch Convert > Torch Export: serving_default > 
+ExportedProgram Run Decompositions
+/usr/lib/python3.10/copyreg.py:101: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+(00:02) [ DONE] LiteRT-Torch Convert > Torch Export: serving_default > 
+ExportedProgram Run Decompositions (+00:01)
+(00:02) [ DONE] LiteRT-Torch Convert > Torch Export: serving_default (+00:02)
+(00:02) [START] LiteRT-Torch Convert > Run FX Passes
+(00:02) [START] LiteRT-Torch Convert > Run FX Passes > ExportedProgram Run 
+Decompositions
+/usr/lib/python3.10/copyreg.py:101: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+(00:04) [ DONE] LiteRT-Torch Convert > Run FX Passes > ExportedProgram Run 
+Decompositions (+00:01)
+(00:04) [ DONE] LiteRT-Torch Convert > Run FX Passes (+00:02)
+(00:04) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default
+(00:04) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions
+/usr/lib/python3.10/copyreg.py:101: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+(00:06) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions (+00:02)
+(00:06) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions
+(00:06) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default > 
+ExportedProgram Run Decompositions (+00:00)
+(00:06) [START] LiteRT-Torch Convert > Lower to MLIR: serving_default > Create 
+MLIR Module
+(00:09) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default > Create 
+MLIR Module (+00:02)
+(00:09) [ DONE] LiteRT-Torch Convert > Lower to MLIR: serving_default (+00:05)
+/home/intel/imagenet/.venv/lib/python3.10/site-packages/litert_torch/_convert/signature.py:52: FutureWarning: `treespec.children_specs` is deprecated. Use `treespec.child(index)` to access a single child, or `treespec.children()` to get all children.
+  args_spec, kwargs_spec = spec.children_specs
+/home/intel/imagenet/.venv/lib/python3.10/site-packages/litert_torch/_convert/signature.py:58: FutureWarning: `treespec.children_specs` is deprecated. Use `treespec.child(index)` to access a single child, or `treespec.children()` to get all children.
+  kwargs_spec.children_specs, kwargs_spec.context
+(00:09) [START] LiteRT-Torch Convert > Merge MLIR Modules
+(00:09) [ DONE] LiteRT-Torch Convert > Merge MLIR Modules (+00:00)
+(00:09) [START] LiteRT-Torch Convert > Run LiteRT Converter Passes
+(00:10) [ DONE] LiteRT-Torch Convert > Run LiteRT Converter Passes (+00:00)
+(00:10) [ DONE] LiteRT-Torch Convert (+00:10)
+(00:00) [START] Write Model to /tmp/tmppbmvjuc6.tflite
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1779865122.996464  100166 flatbuffer_export.cc:4346] Estimated count of arithmetic ops: 608.444 M  ops, equivalently 304.222 M  MACs
+(00:00) [ DONE] Write Model to /tmp/tmppbmvjuc6.tflite (+00:00)
+Model name: /tmp/tmppbmvjuc6.tflite
+Original model size: 13.43 MiB
+Quantized model size: 3.71 MiB
+Quantization Ratio: 0.28 (3.6x smaller)
+Total time: 47.57 ms
+Saved quantized LiteRT model to: mobilenet_v2.int8.tflite
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ 
+(python310_env) intel@twn-nas-nuc-01:~/imagenet$ ls -la
+total 32548
+drwxrwxr-x  3 intel intel     4096  五  27 15:08 .
+drwxr-x--- 27 intel intel     4096  五  27 14:42 ..
+-rw-rw-r--  1 intel intel    16798  五  27 14:25 main.py
+-rwxrwxr-x  1 intel intel  3887696  五  27 14:58 mobilenet_v2.int8.tflite
+-rw-rw-r--  1 intel intel 14078620  五  27 14:46 mobilenet_v2.tflite
+-rw-rw-r--  1 intel intel      676  五  27 14:40 pyproject.toml
+-rw-rw-r--  1 intel intel   299198  五  27 14:46 uv.lock
+drwxrwxr-x  5 intel intel     4096  五  27 14:46 .venv
+

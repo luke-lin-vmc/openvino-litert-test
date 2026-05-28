@@ -20,6 +20,7 @@ Log file [installation.log](./log/installation.log) is provided for reference.
 * [Audio Transcription and Translation](#example---audio-transcription-and-translation)
 * [Image Description and Translation](#example---image-description-and-translation)
 * [Function Calling / Tools](#example---function-calling--tools)
+* [Classical Models with LiteRT](./classical/README.md)
 
 ### Example - Chat
 Run below commands to download Gemma4 and run the model

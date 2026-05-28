@@ -1,0 +1,85 @@
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>python main.py --model mobilenet_v2.tflite --image coco.jpg
+INFO: [litert/core/environment.cc:30] Creating LiteRT environment with options
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=00000200F75E83E0, name=NpuAccelerator
+INFO: [litert/runtime/accelerators/npu_registry.cc:30] NPU accelerator registered.
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+WARNING: [litert/runtime/accelerators/gpu_registry.cc:131] GPU accelerator could not be loaded and registered.
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=00000200F75E9460, name=CpuAccelerator
+INFO: [litert/runtime/accelerators/cpu_registry.cc:42] CPU accelerator registered.
+INFO: [litert/compiler/plugin/compiler_plugin.cc:308] Attempting to load plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:250] Loading plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:260] Loaded plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:263] Resolved plugin api at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:268] Initialize plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/runtime/compiled_model.cc:1104] 0 compiler plugins were applied successfully:
+INFO: [litert/runtime/compiled_model.cc:797] Flatbuffer model initialized directly from incoming litert model.
+INFO: [litert/runtime/dispatch/litert_dispatch.cc:149] Loading shared library: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/dispatch/LiteRtDispatch.dll
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: CPU
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: GPU
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: NPU
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: [litert/core/environment.cc:30] Creating LiteRT environment with options
+WARNING: [litert/runtime/accelerators/npu_registry.cc:34] NPU accelerator could not be loaded and registered: kLiteRtStatusErrorInvalidArgument.
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+WARNING: [litert/runtime/accelerators/gpu_registry.cc:131] GPU accelerator could not be loaded and registered.
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=00000200FADD8920, name=CpuAccelerator
+INFO: [litert/runtime/accelerators/cpu_registry.cc:42] CPU accelerator registered.
+1: n02099267 flat-coated retriever (0.443499)
+2: n02099712 Labrador retriever (0.324956)
+3: n02093256 Staffordshire bullterrier, Staffordshire bull terrier (0.079632)
+4: n02109047 Great Dane (0.044876)
+5: n02111277 Newfoundland, Newfoundland dog (0.027100)
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=00000200F75E83E0, name=NpuAccelerator
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=00000200F75E9460, name=CpuAccelerator
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=00000200FADD8920, name=CpuAccelerator
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>python main.py --model mobilenet_v2.int8.tflite --image coco.jpg
+INFO: [litert/core/environment.cc:30] Creating LiteRT environment with options
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=000002A6C6C29490, name=NpuAccelerator
+INFO: [litert/runtime/accelerators/npu_registry.cc:30] NPU accelerator registered.
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+WARNING: [litert/runtime/accelerators/gpu_registry.cc:131] GPU accelerator could not be loaded and registered.
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=000002A6C6C29910, name=CpuAccelerator
+INFO: [litert/runtime/accelerators/cpu_registry.cc:42] CPU accelerator registered.
+INFO: [litert/compiler/plugin/compiler_plugin.cc:308] Attempting to load plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:250] Loading plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:260] Loaded plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:263] Resolved plugin api at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/compiler/plugin/compiler_plugin.cc:268] Initialize plugin at: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/compiler/LiteRtCompilerPlugin.dll
+INFO: [litert/runtime/compiled_model.cc:1104] 0 compiler plugins were applied successfully:
+INFO: [litert/runtime/compiled_model.cc:797] Flatbuffer model initialized directly from incoming litert model.
+INFO: [litert/runtime/dispatch/litert_dispatch.cc:149] Loading shared library: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/dispatch/LiteRtDispatch.dll
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: CPU
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: GPU
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: NPU
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: [litert/core/environment.cc:30] Creating LiteRT environment with options
+WARNING: [litert/runtime/accelerators/npu_registry.cc:34] NPU accelerator could not be loaded and registered: kLiteRtStatusErrorInvalidArgument.
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+WARNING: [litert/runtime/accelerators/gpu_registry.cc:131] GPU accelerator could not be loaded and registered.
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=000002A6C9B3DFF0, name=CpuAccelerator
+INFO: [litert/runtime/accelerators/cpu_registry.cc:42] CPU accelerator registered.
+1: n02099267 flat-coated retriever (0.541797)
+2: n02099712 Labrador retriever (0.280777)
+3: n02093256 Staffordshire bullterrier, Staffordshire bull terrier (0.059740)
+4: n02109047 Great Dane (0.027420)
+5: n02111277 Newfoundland, Newfoundland dog (0.025886)
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=000002A6C6C29490, name=NpuAccelerator
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=000002A6C6C29910, name=CpuAccelerator
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=000002A6C9B3DFF0, name=CpuAccelerator
+
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
+(python313_venv) c:\GitHub\openvino-litert-test.worktrees\agents-python-litet-inference-example>
