@@ -1,12 +1,11 @@
-(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 More? --backend=cpu ^
 More? --prompt="What is OpenVINO?"
 Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
-gemma-4-E2B-it.litertlm: 100%|████████████████████████████████████████████████████| 2.59G/2.59G [02:12<00:00, 19.5MB/s]
-C:\Python\python313_venv\Lib\site-packages\huggingface_hub\file_download.py:138: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\lukelin1\.cache\huggingface\hub\models--litert-community--gemma-4-E2B-it-litert-lm. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
-To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
-  warnings.warn(message)
 ## What is OpenVINO?
 
 **OpenVINO is an open-source toolkit from Intel that enables the deployment of deep learning models (such as those trained with TensorFlow, PyTorch, etc.) onto a wide variety of Intel hardware accelerators.**
@@ -59,14 +58,24 @@ OpenVINO is primarily used by:
 
 **In short: If you have a deep learning model and you want to run it as fast and efficiently as possible on an Intel machine, OpenVINO is the essential tool to use.**
 
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=cpu
+Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
+[enter] submit | [ctrl+j] newline | [ctrl+c] clear/exit
+
+> What is the capital of France?
+The capital of France is **Paris**.
+>
+
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 More? --backend=gpu ^
 More? --enable-speculative-decoding=true ^
@@ -130,20 +139,18 @@ Imagine you have a highly complex, beautiful painting (your trained Deep Learnin
 
 **In summary, OpenVINO is Intel's comprehensive toolkit for taking complex AI models and making them run lightning-fast and efficiently on Intel processors.**
 
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it_intel_LNL.litertlm ^
 More? --backend=npu ^
 More? --prompt="What is OpenVINO?"
 Downloading gemma-4-E2B-it_intel_LNL.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
-gemma-4-E2B-it_intel_LNL.litertlm: 100%|██████████████████████████████████████████| 2.96G/2.96G [02:13<00:00, 22.2MB/s]
-C:\Python\python313_venv\Lib\site-packages\huggingface_hub\file_download.py:138: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\lukelin1\.cache\huggingface\hub\models--litert-community--gemma-4-E2B-it-litert-lm. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
-To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
-  warnings.warn(message)
 ## What is OpenVINO?
 
 **OpenVINO is an open-source toolkit from Intel that provides a set of optimized tools for deploying machine learning models (like deep learning models) efficiently on various hardware platforms.**
@@ -202,18 +209,16 @@ Think of it this way:
 * **ONNX:** Is like a **standardized blueprint format** that allows different builders to understand the design.
 * **OpenVINO:** Is like the **specialized construction crew** that takes that blueprint and optimizes it specifically for the materials and tools available on an Intel construction site (the hardware), ensuring the building (inference) is built as fast and efficiently as possible.
 
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it_intel_LNL.litertlm ^
 More? --backend=npu ^
 More? --prompt="What is the capital of France?"
 Downloading gemma-4-E2B-it_intel_LNL.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
 The capital of France is **Paris**.
 
-(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>

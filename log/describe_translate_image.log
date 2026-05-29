@@ -1,4 +1,6 @@
-(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 More? --backend=gpu ^
 More? --enable-speculative-decoding=true ^
@@ -39,7 +41,7 @@ Here is the translation of the text from Czech into English:
 
 The sign is a **Pedestrian Zone** sign, indicating an area where walking is prioritized, and it specifies the operating hours or the rules governing that zone.
 
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>

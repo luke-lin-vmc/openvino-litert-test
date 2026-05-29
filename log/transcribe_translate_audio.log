@@ -1,6 +1,7 @@
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 More? --backend=gpu ^
 More? --enable-speculative-decoding=true ^
@@ -12,10 +13,10 @@ How are you doing today?
 今天你怎么样？
 
 
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>
-(python313_venv) C:\GitHub\openvino-litert-test>litert-lm run ^
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
 More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
 More? --backend=cpu ^
 More? --prompt="transcribe the audio then translate it to Chinese" ^
@@ -26,4 +27,15 @@ How are you doing today?
 今天你怎么样？
 
 
-(python313_venv) C:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>
+(python313_venv) c:\GitHub\openvino-litert-test>litert-lm run ^
+More? --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm ^
+More? --backend=gpu ^
+More? --enable-speculative-decoding=true ^
+More? --prompt="transcribe the audio, including timestamps in the format [hh:mm:ss.ms --> hh:mm:ss.ms]" ^
+More? --attachment "./sample/how_are_you_doing_today.wav" ^
+More? --audio-backend=cpu
+Downloading gemma-4-E2B-it.litertlm from litert-community/gemma-4-E2B-it-litert-lm...
+[00:00:00.000 --> 00:00:03.000] How are you doing today?
+
+(python313_venv) c:\GitHub\openvino-litert-test>
