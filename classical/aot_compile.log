@@ -1,0 +1,102 @@
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>python aot_compile.py --model mobilenet_v2.tflite --soc_model PTL
+Compiling IntelOpenVINO_PTL: apply_plugin: 100%|█████████████████████████████████████████| 1/1 [00:00<00:00,  1.02it/s]
+
+(python313_venv) C:\GitHub\openvino-litert-test\classical>python aot_compile.py --model mobilenet_v2.tflite --soc_model LNL
+Compiling IntelOpenVINO_LNL: apply_plugin: 100%|█████████████████████████████████████████| 1/1 [00:00<00:00,  1.40it/s]
+
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>python aot_compile.py --model mobilenet_v2.tflite
+Compiling Google_Tensor_G3: apply_plugin:   0%|                                                 | 0/31 [00:00<?, ?it/s]Skipping failed compilation for Google_Tensor_G3. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpejd0gx0w.error for details.
+Compiling Google_Tensor_G4: apply_plugin:   0%|                                                 | 0/31 [00:00<?, ?it/s]Skipping failed compilation for Google_Tensor_G4. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpr7mnt6c6.error for details.
+Compiling Google_Tensor_G5: apply_plugin:  10%|███▉                                     | 3/31 [00:00<00:01, 18.81it/s]Skipping failed compilation for Google_Tensor_G5. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpa285ew2i.error for details.
+Compiling Google_Tensor_G6: apply_plugin:  10%|███▉                                     | 3/31 [00:00<00:01, 18.81it/s]Skipping failed compilation for Google_Tensor_G6. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpwcm_jo8h.error for details.
+Compiling MediaTek_MT6853: apply_plugin:  23%|█████████▍                                | 7/31 [00:02<00:09,  2.48it/s]Skipping failed compilation for MediaTek_MT6853. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpxz75xgnn.error for details.
+Compiling MediaTek_MT6877: apply_plugin:  23%|█████████▍                                | 7/31 [00:02<00:09,  2.48it/s]Skipping failed compilation for MediaTek_MT6877. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpw_r2n6lv.error for details.
+Compiling MediaTek_MT6878: apply_plugin:  29%|████████████▏                             | 9/31 [00:02<00:06,  3.55it/s]Skipping failed compilation for MediaTek_MT6878. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpcutykyxz.error for details.
+Compiling MediaTek_MT6879: apply_plugin:  29%|████████████▏                             | 9/31 [00:02<00:06,  3.55it/s]Skipping failed compilation for MediaTek_MT6879. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpkq1gr46s.error for details.
+Compiling MediaTek_MT6886: apply_plugin:  35%|██████████████▌                          | 11/31 [00:02<00:04,  4.77it/s]Skipping failed compilation for MediaTek_MT6886. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmps3jljne2.error for details.
+Compiling MediaTek_MT6893: apply_plugin:  35%|██████████████▌                          | 11/31 [00:02<00:04,  4.77it/s]Skipping failed compilation for MediaTek_MT6893. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp1gyhy__t.error for details.
+Compiling MediaTek_MT6895: apply_plugin:  42%|█████████████████▏                       | 13/31 [00:02<00:02,  6.06it/s]Skipping failed compilation for MediaTek_MT6895. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp4jzut5h4.error for details.
+Compiling MediaTek_MT6897: apply_plugin:  42%|█████████████████▏                       | 13/31 [00:02<00:02,  6.06it/s]Skipping failed compilation for MediaTek_MT6897. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp99nf1k_t.error for details.
+Compiling MediaTek_MT6983: apply_plugin:  48%|███████████████████▊                     | 15/31 [00:02<00:02,  7.18it/s]Skipping failed compilation for MediaTek_MT6983. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp45bj8ffo.error for details.
+Compiling MediaTek_MT6985: apply_plugin:  48%|███████████████████▊                     | 15/31 [00:02<00:02,  7.18it/s]Skipping failed compilation for MediaTek_MT6985. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpppn8nh9r.error for details.
+Compiling MediaTek_MT6989: apply_plugin:  55%|██████████████████████▍                  | 17/31 [00:02<00:01,  8.34it/s]Skipping failed compilation for MediaTek_MT6989. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpc50erobl.error for details.
+Compiling MediaTek_MT6991: apply_plugin:  55%|██████████████████████▍                  | 17/31 [00:02<00:01,  8.34it/s]Skipping failed compilation for MediaTek_MT6991. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpy4gyr73f.error for details.
+Compiling MediaTek_MT8171: apply_plugin:  61%|█████████████████████████▏               | 19/31 [00:03<00:01,  9.39it/s]Skipping failed compilation for MediaTek_MT8171. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpoazl8c2k.error for details.
+Compiling MediaTek_MT8188: apply_plugin:  61%|█████████████████████████▏               | 19/31 [00:03<00:01,  9.39it/s]Skipping failed compilation for MediaTek_MT8188. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp1yj2y7ur.error for details.
+Compiling MediaTek_MT8189: apply_plugin:  68%|███████████████████████████▊             | 21/31 [00:03<00:00, 10.19it/s]Skipping failed compilation for MediaTek_MT8189. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpi26fv63f.error for details.
+Compiling MediaTek_MT6993: apply_plugin:  68%|███████████████████████████▊             | 21/31 [00:03<00:00, 10.19it/s]Skipping failed compilation for MediaTek_MT6993. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpw4r4v0pl.error for details.
+Compiling Qualcomm_SA8255: apply_plugin:  74%|██████████████████████████████▍          | 23/31 [00:03<00:00, 11.05it/s]Skipping failed compilation for Qualcomm_SA8255. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpjfkhu6e1.error for details.
+Compiling Qualcomm_SA8295: apply_plugin:  74%|██████████████████████████████▍          | 23/31 [00:03<00:00, 11.05it/s]Skipping failed compilation for Qualcomm_SA8295. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpr3nzuazr.error for details.
+Compiling Qualcomm_SM8350: apply_plugin:  81%|█████████████████████████████████        | 25/31 [00:03<00:00, 11.71it/s]Skipping failed compilation for Qualcomm_SM8350. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpi4m_bf17.error for details.
+Compiling Qualcomm_SM8450: apply_plugin:  81%|█████████████████████████████████        | 25/31 [00:03<00:00, 11.71it/s]Skipping failed compilation for Qualcomm_SM8450. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp5o1sfak3.error for details.
+Compiling Qualcomm_SM8550: apply_plugin:  87%|███████████████████████████████████▋     | 27/31 [00:03<00:00, 12.06it/s]Skipping failed compilation for Qualcomm_SM8550. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpoqgtazlt.error for details.
+Compiling Qualcomm_SM8650: apply_plugin:  87%|███████████████████████████████████▋     | 27/31 [00:03<00:00, 12.06it/s]Skipping failed compilation for Qualcomm_SM8650. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpljfdxc4n.error for details.
+Compiling Qualcomm_SM8750: apply_plugin:  94%|██████████████████████████████████████▎  | 29/31 [00:03<00:00, 12.24it/s]Skipping failed compilation for Qualcomm_SM8750. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmpc4rma7m2.error for details.
+Compiling Qualcomm_SM8850: apply_plugin:  94%|██████████████████████████████████████▎  | 29/31 [00:03<00:00, 12.24it/s]Skipping failed compilation for Qualcomm_SM8850. Error: apply_plugin failed to apply plugin. See C:\Users\lukelin1\AppData\Local\Temp\tmp20yjins5.error for details.
+Compiling Qualcomm_SM8850: apply_plugin: 100%|█████████████████████████████████████████| 31/31 [00:03<00:00,  7.89it/s]
+
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6E19-CE53
+
+ Directory of C:\GitHub\openvino-litert-test\classical
+
+06/01/2026  03:41 PM    <DIR>          .
+06/01/2026  12:07 PM    <DIR>          ..
+06/01/2026  03:01 PM             1,556 aot_compile.log
+06/01/2026  03:01 PM             1,556 aot_compile.py
+06/01/2026  12:07 PM               448 check.py
+06/01/2026  12:07 PM           206,576 coco.jpg
+06/01/2026  12:07 PM            13,745 export.log
+06/01/2026  12:07 PM            11,000 imagenet_lsvrc_2015_synsets.txt
+06/01/2026  12:07 PM           763,243 imagenet_metadata.txt
+06/01/2026  12:07 PM             8,404 install.log
+06/01/2026  02:31 PM            17,461 main.py
+06/01/2026  12:07 PM         3,887,696 mobilenet_v2.int8.tflite
+06/01/2026  12:07 PM        14,078,620 mobilenet_v2.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Google_Tensor_G3_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Google_Tensor_G4_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Google_Tensor_G5_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Google_Tensor_G6_apply_plugin.tflite
+06/01/2026  03:41 PM         7,763,322 mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite
+06/01/2026  03:41 PM         7,673,210 mobilenet_v2_IntelOpenVINO_PTL_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6853_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6877_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6878_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6879_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6886_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6893_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6895_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6897_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6983_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6985_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6989_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6991_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT6993_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT8171_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT8188_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_MediaTek_MT8189_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SA8255_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SA8295_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SM8350_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SM8450_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SM8550_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SM8650_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SM8750_apply_plugin.tflite
+06/01/2026  03:41 PM                 0 mobilenet_v2_Qualcomm_SM8850_apply_plugin.tflite
+06/01/2026  03:05 PM             5,062 README.md
+06/01/2026  12:07 PM                63 requirements.txt
+06/01/2026  03:28 PM            10,655 run.log
+              44 File(s)     34,442,617 bytes
+               2 Dir(s)  498,153,238,528 bytes free
+
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>

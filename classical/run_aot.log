@@ -1,0 +1,100 @@
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6E19-CE53
+
+ Directory of C:\GitHub\openvino-litert-test\classical
+
+06/01/2026  04:02 PM    <DIR>          .
+06/01/2026  12:07 PM    <DIR>          ..
+06/01/2026  04:01 PM            14,574 aot_compile.log
+06/01/2026  04:03 PM             1,571 aot_compile.py
+06/01/2026  12:07 PM               448 check.py
+06/01/2026  12:07 PM           206,576 coco.jpg
+06/01/2026  12:07 PM            13,745 export.log
+06/01/2026  12:07 PM            11,000 imagenet_lsvrc_2015_synsets.txt
+06/01/2026  12:07 PM           763,243 imagenet_metadata.txt
+06/01/2026  12:07 PM             8,404 install.log
+06/01/2026  02:31 PM            17,461 main.py
+06/01/2026  12:07 PM         3,887,696 mobilenet_v2.int8.tflite
+06/01/2026  12:07 PM        14,078,620 mobilenet_v2.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Google_Tensor_G3_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Google_Tensor_G4_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Google_Tensor_G5_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Google_Tensor_G6_apply_plugin.tflite
+06/01/2026  04:02 PM         7,763,322 mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite
+06/01/2026  04:02 PM         7,673,210 mobilenet_v2_IntelOpenVINO_PTL_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6853_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6877_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6878_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6879_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6886_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6893_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6895_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6897_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6983_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6985_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6989_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6991_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT6993_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT8171_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT8188_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_MediaTek_MT8189_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SA8255_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SA8295_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SM8350_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SM8450_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SM8550_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SM8650_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SM8750_apply_plugin.tflite
+06/01/2026  04:02 PM                 0 mobilenet_v2_Qualcomm_SM8850_apply_plugin.tflite
+06/01/2026  03:05 PM             5,062 README.md
+06/01/2026  12:07 PM                63 requirements.txt
+06/01/2026  03:28 PM            10,655 run.log
+              44 File(s)     34,455,650 bytes
+               2 Dir(s)  498,094,497,792 bytes free
+
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>python main.py --model mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite --image coco.jpg
+INFO: [litert/core/environment.cc:30] Creating LiteRT environment with options
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=0000019CDE9EA940, name=NpuAccelerator
+INFO: [litert/runtime/accelerators/npu_registry.cc:30] NPU accelerator registered.
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(C).
+WARNING: [litert/runtime/accelerators/gpu_registry.cc:131] GPU accelerator could not be loaded and registered.
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=0000019CDE9EA1C0, name=CpuAccelerator
+INFO: [litert/runtime/accelerators/cpu_registry.cc:42] CPU accelerator registered.
+WARNING: [litert/runtime/compiled_model.cc:783] Compiler plugin path is provided in the environment, but the model is pre-compiled. Plugins won't be applied.
+INFO: [litert/runtime/compiled_model.cc:797] Flatbuffer model initialized directly from incoming litert model.
+INFO: [litert/runtime/dispatch/litert_dispatch.cc:149] Loading shared library: C:/Python/python313_venv/Lib/site-packages/ai_edge_litert/vendors/intel_openvino/dispatch/LiteRtDispatch.dll
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: CPU
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: GPU
+INFO: [litert/vendors/intel_openvino/dispatch/dispatch_api.cc:117] [Openvino]Found device plugin for: NPU
+INFO: [litert/vendors/intel_openvino/dispatch/invocation_context.cc:185] Openvino InvocationContext Initialize SUCCESS
+INFO: [litert/core/environment.cc:30] Creating LiteRT environment with options
+WARNING: [litert/runtime/accelerators/npu_registry.cc:34] NPU accelerator could not be loaded and registered: kLiteRtStatusErrorInvalidArgument.
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+INFO: [litert/runtime/accelerators/gpu_registry.cc:101] Attempting to load GPU accelerator(l).
+WARNING: [litert/runtime/accelerators/gpu_registry.cc:131] GPU accelerator could not be loaded and registered.
+INFO: [litert/runtime/accelerator_registry.cc:54] RegisterAccelerator: ptr=0000019CDEBA8220, name=CpuAccelerator
+INFO: [litert/runtime/accelerators/cpu_registry.cc:42] CPU accelerator registered.
+1: n02099267 flat-coated retriever (1.000000)
+2: n01560419 bulbul (0.000000)
+3: n12985857 coral fungus (0.000000)
+4: n01440764 tench, Tinca tinca (0.000000)
+5: n15075141 toilet tissue, toilet paper, bathroom tissue (0.000000)
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=0000019CDE9EA940, name=NpuAccelerator
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=0000019CDE9EA1C0, name=CpuAccelerator
+INFO: [litert/runtime/accelerator_registry.cc:43] DestroyAccelerator: ptr=0000019CDEBA8220, name=CpuAccelerator
+
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>
+(python313_venv) C:\GitHub\openvino-litert-test\classical>

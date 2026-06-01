@@ -1,16 +1,18 @@
 # About this folder
-This folder is used to document our testing steps for running classical (vision, audio, and NLP) models on LiteRT (formerly TensorFlow Lite) with the OpenVINO backend.
+This folder is used to document our testing steps for running classical (vision, audio, and NLP) models with LiteRT (formerly TensorFlow Lite) OpenVINO backend on Intel NPUs.
 
 The model can be executed with the following two modes
-* just-in-time (JIT)
-* ahead-of-time (AOT) --- compilation of a provided .tflite model.
+* **Just-in-time (JIT)** — load a raw .tflite; the compiler plugin partitions and compiles supported ops for the NPU at CompiledModel.from_file() time. Adds some first-run latency (varies by model).
+* **Ahead-of-time (AOT)** — load a compiled .tflite. Skips the partition and compilation step at load time.
 
 # Steps
 
-### This example comes from [ImageNet LiteRT end-to-end sample](https://github.com/google-ai-edge/litert-samples/tree/main/end_to_end/imagenet), we use it to run  MobileNet_v2 with LiteRT on Intel CPU, GPU and NPU
+### This example comes from [ImageNet LiteRT end-to-end sample](https://github.com/google-ai-edge/litert-samples/tree/main/end_to_end/imagenet), we use it to run  MobileNet_v2 with LiteRT on Intel NPU
 
 ## Export model (Linux only)
-Model export is only supported on Linux as the required [litert-torch](https://github.com/google-ai-edge/litert-torch) package is only available on Linux
+The exported models [`mobilenet_v2.tflite`](./mobilenet_v2.tflite) and quantized [`mobilenet_v2.int8.tflite`](./mobilenet_v2.int8.tflite) have been included in the repo.
+
+You may also export models on your own. Model export is only supported on Linux as the required [litert-torch](https://github.com/google-ai-edge/litert-torch) package is only available on Linux
 
 Run below commands to generate `mobilenet_v2.tflite` and quantized `mobilenet_v2.int8.tflite`
 ```
@@ -21,12 +23,15 @@ uv run main.py convert --arch mobilenet_v2 --output mobilenet_v2.int8.tflite --q
 Log file [export.log](./export.log) is provided for reference.
 
 ## Run model
-### Download a test image
+### Prepare a test image
+The test image [coco.jpg](./coco.jpg) has been included in the repo. You may also download it on your own.
 ```
 curl -o coco.jpg https://storage.openvinotoolkit.org/repositories/openvino_notebooks/data/data/image/coco.jpg
 ```
-### Download label files
+### Prepare label files
 The script requires ImageNet label metadata to map model outputs to human-readable names.
+The lable files [imagenet_lsvrc_2015_synsets.txt](./imagenet_lsvrc_2015_synsets.txt) and [imagenet_metadata.txt](./imagenet_metadata.txt) have been included in the repo. You may also download them on your own.
+
 ```
 curl -sSL -o imagenet_lsvrc_2015_synsets.txt https://raw.githubusercontent.com/tensorflow/models/refs/heads/master/research/slim/datasets/imagenet_lsvrc_2015_synsets.txt
 ```
@@ -46,10 +51,12 @@ Install other required packages
 ```
 pip install -r requirements.txt
 ```
-Verify installation, the content of [check.py](./check.py) is from [here](https://ai.google.dev/edge/litert/next/intel#4-verify-installation)
+Run below command to verify installation
 ```
 python check.py
 ```
+* The content of `check.py` is copied from [here](https://ai.google.dev/edge/litert/next/intel#4-verify-installation)
+
 Expected output
 ```
 Backend: intel_openvino
@@ -60,11 +67,12 @@ Available devices: ['CPU', 'GPU', 'NPU']
 ```
 Log file [install.log](./install.log) is provided for reference.
 
-### Run
+### Run, Just-in-time (JIT) Mode
 Input below command
 ```
 python main.py --model mobilenet_v2.tflite --image coco.jpg
 ```
+* This [`main.py`](./main.py) is modified from the original [main.py](https://github.com/google-ai-edge/litert-samples/blob/main/end_to_end/imagenet/main.py). You may compare them to check the differences
 * You can also test the quantized `mobilenet_v2.int8.tflite` model
 
 **Input**
@@ -78,10 +86,43 @@ python main.py --model mobilenet_v2.tflite --image coco.jpg
 4: n02109047 Great Dane (0.044876)
 5: n02111277 Newfoundland, Newfoundland dog (0.027100)
 ```
+Log file [run_jit.log](./run_jit.log) is provided for reference.
+### Run, Ahead-of-time (AOT) Mode
+#### Compile the model in advance
+Compile the model for Lunar Lake (LNL)
+```
+python aot_compile.py --model mobilenet_v2.tflite --soc_model LNL
+```
+Compile the model for Panther Lake (PTL)
+```
+python aot_compile.py --model mobilenet_v2.tflite --soc_model PTL
+```
+Compile the model for every registered backend/target
+```
+python aot_compile.py --model mobilenet_v2.tflite
+```
+Log file [aot_compile.log](./aot_compile.log) is provided for reference.
+#### Run the compiled model
+On LNL
+```
+python main.py --model mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite --image coco.jpg
+```
+On PTL
+```
+python main.py --model mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite --image coco.jpg
+```
 Log file [run.log](./run.log) is provided for reference.
 
-### Know issue
-Fail to run on NPU, log below. Still WIP
+### Know issues
+* Since the workload is small, you may not notice NPU loading from the task manager. You can try running the inference in a loop to have a noticeable NPU usage
+``` python
+# model.run_by_index(signature_index, input_buffers, output_buffers)
+  loop_count = 100000
+  for i in range(loop_count):
+    print(f"Iteration {i + 1}/{loop_count}")
+    model.run_by_index(signature_index, input_buffers, output_buffers)
+```
+* Below message is actually a misleading warning generated by the LiteRT framework. It is initiated by an internal Environment creation within the LiteRT CompiledModel, and is not relevant to the original Environment created by the user.
 ```
 WARNING: [litert/runtime/accelerators/npu_registry.cc:34] NPU accelerator could not be loaded and registered: kLiteRtStatusErrorInvalidArgument.
 ```
