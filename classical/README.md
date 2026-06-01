@@ -7,10 +7,10 @@ The model can be executed with the following two modes
 
 # Steps
 
-### This example is to run MobileNet_v2 from [ImageNet LiteRT end-to-end sample](https://github.com/google-ai-edge/litert-samples/tree/main/end_to_end/imagenet)
+### This example comes from [ImageNet LiteRT end-to-end sample](https://github.com/google-ai-edge/litert-samples/tree/main/end_to_end/imagenet), we use it to run  MobileNet_v2 with LiteRT on Intel CPU, GPU and NPU
 
 ## Export model (Linux only)
-Model export is only supported on Linux as the required package [litert-torch](https://github.com/google-ai-edge/litert-torch) requires Linux
+Model export is only supported on Linux as the required [litert-torch](https://github.com/google-ai-edge/litert-torch) package is only available on Linux
 
 Run below commands to generate `mobilenet_v2.tflite` and quantized `mobilenet_v2.int8.tflite`
 ```
@@ -21,7 +21,7 @@ uv run main.py convert --arch mobilenet_v2 --output mobilenet_v2.int8.tflite --q
 Log file [export.log](./export.log) is provided for reference.
 
 ## Run model
-### Download sample image
+### Download a test image
 ```
 curl -o coco.jpg https://storage.openvinotoolkit.org/repositories/openvino_notebooks/data/data/image/coco.jpg
 ```
@@ -46,7 +46,7 @@ Install other required packages
 ```
 pip install -r requirements.txt
 ```
-Verify installation
+Verify installation, the content of [check.py](./check.py) is from [here](https://ai.google.dev/edge/litert/next/intel#4-verify-installation)
 ```
 python check.py
 ```

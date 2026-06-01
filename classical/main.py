@@ -463,8 +463,8 @@ def _classify(argv: list[str]) -> int:
   if not os.path.exists(args.image):
     raise FileNotFoundError(f"Image not found: {args.image}")
 
-  model = CompiledModel.from_file(args.model)
-# model = CompiledModel.from_file(args.model, hardware_accel=HardwareAccelerator.GPU)
+# model = CompiledModel.from_file(args.model)  
+  model = CompiledModel.from_file(args.model, hardware_accel=HardwareAccelerator.NPU)
   signature_index = 0
 
   channels = 3
