@@ -111,7 +111,7 @@ On PTL
 ```
 python main.py --model mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite --image coco.jpg
 ```
-Log file [run.log](./run.log) is provided for reference.
+Log file [run_aot.log](./run_aot.log) is provided for reference.
 
 ### Know issues
 * Since the workload is small, you may not notice NPU loading from the task manager. You can try running the inference in a loop to have a noticeable NPU usage
