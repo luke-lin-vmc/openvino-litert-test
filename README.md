@@ -178,8 +178,3 @@ Log file [function_calling.log](./log/function_calling.log) is provided for refe
 # Reference
 * [OpenVINO™ backend for LiteRT: Optimize NPU performance on Intel® Core™ Ultra processors](https://www.intel.com/content/www/us/en/developer/articles/community/litert-unlocks-core-ultra-npu-performance-for-aipc.html)
 * [LiteRT-LM CLI](https://ai.google.dev/edge/litert-lm/cli)
-
-
-# Future Works
-* Try classical models using LiteRT on Intel NPU, for both JIT and AOT model
-<br>https://ai.google.dev/edge/litert/next/intel</br>
