@@ -1,3 +1,4 @@
+# The script is copied from https://ai.google.dev/edge/litert/next/intel#4-verify-installation
 from ai_edge_litert.aot.vendors.intel_openvino import intel_openvino_backend
 import ai_edge_litert_sdk_intel, openvino, os
 print('Backend:', intel_openvino_backend.IntelOpenVinoBackend.id())
