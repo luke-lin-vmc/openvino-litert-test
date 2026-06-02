@@ -108,7 +108,7 @@ python main.py --model mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite --imag
 ```
 On PTL
 ```
-python main.py --model mobilenet_v2_IntelOpenVINO_LNL_apply_plugin.tflite --image coco.jpg
+python main.py --model mobilenet_v2_IntelOpenVINO_PTL_apply_plugin.tflite --image coco.jpg
 ```
 Log file [run_aot.log](./log/run_aot.log) is provided for reference.
 
