@@ -16,6 +16,7 @@ pip install --upgrade openvino
 Log file [installation.log](./log/installation.log) is provided for reference.
 
 ## Run Examples
+Here we use `litert-lm`, LiteRT-LM CLI ([source code](https://github.com/google-ai-edge/) and [doc](https://developers.google.com/edge/litert-lm/cli)) to demo below features.
 * [Chat](#example---chat)
 * [Audio Transcription and Translation](#example---audio-transcription-and-translation)
 * [Image Description and Translation](#example---image-description-and-translation)
@@ -40,7 +41,7 @@ litert-lm run ^
 --enable-speculative-decoding=true ^
 --prompt="What is OpenVINO?"
 ```
-* Use the `--enable-speculative-decoding=true` flag is recommended for GPU backend. [(source)](https://ai.google.dev/edge/litert-lm/cli#mtp)
+* Use the `--enable-speculative-decoding=true` flag is recommended for GPU backend. [(source)](https://developers.google.com/edge/litert-lm/cli/usage#mtp)
 #### Run on NPU (Lunar Lake)
 ```
 litert-lm run ^
