@@ -176,6 +176,9 @@ The current stock price for Intel (INTC) is $119.84 USD, which is a change of +0
 ```
 Log file [function_calling.log](./log/function_calling.log) is provided for reference.
 
+### Example - Classical Models
+* [Classical Models with LiteRT](./classical/README.md)
+
 # Reference
 * [OpenVINO™ backend for LiteRT: Optimize NPU performance on Intel® Core™ Ultra processors](https://www.intel.com/content/www/us/en/developer/articles/community/litert-unlocks-core-ultra-npu-performance-for-aipc.html)
 * [LiteRT-LM CLI](https://ai.google.dev/edge/litert-lm/cli)
